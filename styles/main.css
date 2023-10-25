@@ -1,0 +1,35 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a {
+  font-weight: bold;
+  color: orange;
+}
+
+a:link,
+a:focus {
+  color: orange;
+}
+
+a:hover,
+a:focus {
+  color: green;
+}
+
+/* Header */
+header img {
+  float: left;
+}
+header h2 {
+  font-size: 230%;
+  font-style: italic;
+  color: orange;
+  text-indent: 25px;
+  text-shadow: 2px 2px 2px black;
+}
+
+header h3 {
+  font-size: 125%;
+  text-indent: 25px;
+}
