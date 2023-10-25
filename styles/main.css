@@ -33,3 +33,20 @@ header h3 {
   font-size: 125%;
   text-indent: 25px;
 }
+
+/* Main */
+main h1 {
+  font-size: 140%;
+}
+main h1:first-letter {
+  font-size: 240%;
+}
+main h2 {
+  font-size: 125%;
+}
+main h3 {
+  font-size: 110%;
+}
+ul {
+  line-height: 1.5;
+}
