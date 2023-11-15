@@ -1,7 +1,6 @@
 html {
   background-image: url("../images/bats.gif");
 }
-
 body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   max-width: 960px;
@@ -25,7 +24,6 @@ header {
   background-image: linear-gradient(45deg, white 0%, orange 75%, black 100%);
   padding: 0.9375em 1.875%;
 }
-
 header img {
   float: left;
   padding-right: 1.875%;
@@ -36,57 +34,46 @@ header img {
 header h2 {
   font-size: 230%;
 }
-
 header h3 {
   font-size: 125%;
   padding-bottom: 0.75em;
 }
 
 /* Navigation Menu */
-
 #nav_menu {
   clear: left;
 }
-
 #nav_menu ul {
   list-style: none;
   position: relative;
 }
-
 #nav_menu ul li {
   float: left;
   width: 20%;
 }
-
 #nav_menu ul ul {
   display: none;
   position: absolute;
   top: 100%;
 }
-
 #nav_menu ul ul li {
   float: none;
 }
-
 #nav_menu ul li:hover > ul {
   display: block;
 }
-
 #nav_menu > ul::after {
   content: "";
   clear: both;
   display: block;
 }
-
 #nav_menu ul {
   margin: 0;
   padding: 0;
 }
-
 #nav_menu ul li:hover ul {
   width: 100%;
 }
-
 #nav_menu ul li a {
   text-align: center;
   display: block;
@@ -95,7 +82,6 @@ header h3 {
   background-color: black;
   color: white;
 }
-
 #nav_menu ul li a.current {
   color: orange;
 }
