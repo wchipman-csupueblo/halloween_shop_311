@@ -10,6 +10,14 @@ body {
   padding: 0;
   border: 3px solid black;
   box-shadow: 0 9px 18px 9px;
+  display: grid;
+  grid-template: repeat(4, auto) / 1fr 3fr;
+  grid-column-gap: 2.5%;
+  grid-template-areas:
+    "head head"
+    "navi navi"
+    "side sec"
+    "foot foot";
 }
 h1,
 h2,
@@ -23,6 +31,7 @@ p {
 header {
   background-image: linear-gradient(45deg, white 0%, orange 75%, black 100%);
   padding: 0.9375em 1.875%;
+  grid-area: head;
 }
 header img {
   float: left;
@@ -38,41 +47,19 @@ header h3 {
   font-size: 125%;
   padding-bottom: 0.75em;
 }
-
 /* Navigation Menu */
 #nav_menu {
   clear: left;
+  margin: 0;
+  padding: 0;
+  grid-area: navi;
 }
 #nav_menu ul {
   list-style: none;
-  position: relative;
-}
-#nav_menu ul li {
-  float: left;
-  width: 20%;
-}
-#nav_menu ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-}
-#nav_menu ul ul li {
-  float: none;
-}
-#nav_menu ul li:hover > ul {
-  display: block;
-}
-#nav_menu > ul::after {
-  content: "";
-  clear: both;
-  display: block;
-}
-#nav_menu ul {
   margin: 0;
   padding: 0;
-}
-#nav_menu ul li:hover ul {
-  width: 100%;
+  display: grid;
+  grid-template: auto / repeat(5, 1fr);
 }
 #nav_menu ul li a {
   text-align: center;
@@ -89,89 +76,66 @@ header h3 {
 #nav_menu ul li a:focus {
   background-color: gray;
 }
-
 /* Sidebar */
 aside {
-  float: left;
-  width: 20%;
-  padding: 1.25em 0;
+  margin: 0;
+  padding: 2em 0;
+  grid-area: side;
 }
-
 #nav_list ul {
-  width: 68.75%;
   list-style: none;
-  padding-left: 15%;
+  padding: 0 15%;
+  margin: 0;
 }
-
 #nav_list ul li {
   margin-bottom: 0.5em;
   border: 2px solid black;
 }
-
 #nav_list ul li a {
   display: block;
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   background-color: orange;
-  padding: 0.5em 0 0.5em 7.27272%;
+  padding: 0.5em 0;
   color: black;
 }
-
 /* Section */
 section {
-  width: 72.5%;
-  float: right;
-  padding: 1.25em 5% 1.25em 2.5%;
+  padding: 2em 5% 2em 0;
+  grid-area: sec;
 }
-
 section h1 {
   font-size: 140%;
   margin-bottom: 0.5em;
 }
-
-section h1:first-letter {
-  font-size: 240%;
-}
-
 section h2 {
   font-size: 125%;
-  margin: 0.8em 0 0.5em 0;
+  margin: 0.8em 0 0.4em 0;
 }
-
-section h3 {
-  font-size: 110%;
-  margin: 0.8em 0 0.5em 0;
-}
-
 section p {
   margin-bottom: 0.5em;
 }
 section a {
   font-weight: bold;
   color: orange;
+  text-decoration: none;
 }
-
 section a:link,
 main a:visited {
   color: orange;
 }
-
 section a:hover,
 main a:focus {
   color: green;
 }
 
-section img {
-  width: 30%;
-  max-width: 150px;
-}
-
 /* footer */
 footer {
-  clear: both;
   border-top: 2px solid black;
   padding: 0.9375em 1.875%;
   background-image: linear-gradient(45deg, black 0%, orange 25%, white 100%);
+  grid-area: foot;
 }
 
 footer p {
@@ -194,33 +158,33 @@ footer p {
 }
 
 @media only screen and (max-width: 667px) {
+  body {
+    grid-template: repeat(5, auto) / 1fr;
+    grid-template-areas:
+      "head"
+      "navi"
+      "sec"
+      "side"
+      "foot";
+  }
   #nav_menu {
     display: none;
   }
   #mobile_menu {
     display: block;
+    grid-area: navi;
   }
   header h2 {
     font-size: 200%;
   }
   section {
-    width: 90%;
-    float: none;
     padding-left: 5%;
-    padding-bottom: 0.5em;
   }
   aside {
-    width: 90%;
-    float: none;
     padding: 0 5% 1em 5%;
   }
   #nav_list ul {
-    width: 50%;
-    padding-left: 25%;
-    text-align: center;
-  }
-  #nav_list ul li a {
-    padding-left: 0;
+    padding: 0 30%;
   }
 }
 
@@ -233,8 +197,5 @@ footer p {
   }
   section h1 {
     font-size: 130%;
-  }
-  section h1::first-letter {
-    font-size: 180%;
   }
 }
